@@ -1,0 +1,27 @@
+<div class="col-xl-6 col-lg-8">
+    <div class="blog-area mb-120">
+        <div class="tournament-top-wrap">
+            <div class="section-title tournament-title">
+                <h2>Most Viewed <span>Articles</span></h2>
+            </div>
+        </div>
+        <div class="blog-post-wrap">
+            {% for post in posts %}
+            <div class="blog-post-item blog-style-one">
+                <div class="blog-thumb">
+                    <a href="{% url 'blog:single' pid=post.id %}"><img src="{{post.image.url}}" alt=""></a>
+                </div>
+                <div class="blog-post-content">
+                    <h5><a href="{% url 'blog:single' pid=post.id %}">{{post.title}}</a></h5>
+                    <div class="blog-meta">
+                        <ul>
+                            <li><i class="far fa-clock"></i>{{post.published_date|date:"d M Y"}}</li>
+                            <li><i class="fas fa-heart"></i>{{post.counted_views}}</li>
+                        </ul>
+                    </div>
+                    <p>{{post.content|truncatewords:10}}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>

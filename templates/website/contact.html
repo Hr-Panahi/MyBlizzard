@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<body>
+
+    <!-- main-area -->
+    <main>
+
+        <!-- breadcrumb-area -->
+        <section class="breadcrumb-area breadcrumb-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="breadcrumb-content text-center">
+                            <h2>contact <span>info</span></h2>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index-2.html">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="#">pages</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">contact</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- breadcrumb-area-end -->
+
+        <!-- contact-area -->
+        <section class="contact-area pt-120 pb-120">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div id="contact-map"></div>
+                    </div>
+                    <div class="col-lg-6 pl-45">
+                        <div class="section-title title-style-three mb-20">
+                            <h2>CONTACT US ABOUT <span>PRESS</span></h2>
+                        </div>
+                        <div class="contact-info-list mb-40">
+                            <ul>
+                                <li><i class="fas fa-map-marker-alt"></i>Walking Park, Los Angeles, Brockland, USA</li>
+                                
+                        </div>
+                        <div class="contact-form">
+                            <form action="{% url 'website:contact' %}" method="post">
+                                {% csrf_token %}
+                                <textarea name="message" placeholder="Write Message..."></textarea>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <input name='name' type="text" placeholder="Your Name">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input name='email' type="email" placeholder="Your Mail">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input name='subject' type="text" placeholder="subject">
+                                    </div>
+                                    <div class="col-md-6">
+                                        {{form.captcha}}
+                                    </div>
+                                </div>
+                                <button type='submit'>SUBMIT MESSAGE</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- contact-area-end -->
+
+
+
+    </main>
+    <!-- main-area-end -->
+
+
+    {% endblock %}

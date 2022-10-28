@@ -1,0 +1,14 @@
+{% load static %}
+<div class="widget mb-45">
+    <div class="sidebar-widget-title mb-25">
+        <h4>category <span>post</span></h4>
+    </div>
+    <div class="sidebar-cat">
+        {% for name,count in categories.items %}
+        <ul>
+            <li><a href="{% url 'blog:category' cat_name=name %}">{{name}} ( {{count}} )</a></li>
+
+        </ul>
+        {% endfor %}
+    </div>
+</div>
