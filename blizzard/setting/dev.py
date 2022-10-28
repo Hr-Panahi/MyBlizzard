@@ -26,7 +26,7 @@ DATABASES = {
     }
 }
 
-STATI_ROOT = BASE_DIR / 'static'
+STATIC_ROOT = BASE_DIR / 'static'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 STATICFILES_DIRS = [

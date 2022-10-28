@@ -117,10 +117,6 @@ AUTHENTICATION_BACKENDS = [
 
 WSGI_APPLICATION = 'blizzard.wsgi.application'
 
-
-
-
-
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
@@ -174,6 +170,6 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'compressor.finders.CompressorFinder',
 )
-COMPRESS_OFFLINE = True
+COMPRESS_OFFLINE = False
 COMPRESS_ENABLED = False
 MAINTENANCE_MODE = False
